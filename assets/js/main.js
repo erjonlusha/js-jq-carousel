@@ -72,10 +72,23 @@ if (immagine.hasClass("active") && !immagine.hasClass("first")) {
 
 
 // In oltre per scorrere le immagini permettere anche l’uso delle frecce sinistra e destra della tastiera
-
-$(function() {
-      $(window).keypress(function(e) {
-          var key = e.which;
-          //do stuff with "key" here...
-      });
+/*
+$ (document).ready(function() {
+$ (document).bind('keydown', 'return', function(e) {
+alert("Premuto"+e.which);
 });
+});
+*/
+
+
+$ (document).ready(function() {
+$ (document).bind('keydown', 'return', function(e) {
+    if (e.which == 37 ) {
+        prevImg.trigger("click");
+    }
+    if (e.which == 39 ) {
+        prevImg.trigger("click");
+    }
+});
+});
+
